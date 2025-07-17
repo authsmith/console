@@ -7,7 +7,7 @@ export default function App() {
   return (
     <Router
       root={(props) => (
-        <div class="flex overflow-hidden w-full h-full">
+        <div class="flex overflow-hidden text-sm w-full h-full">
           <Suspense>{props.children}</Suspense>
         </div>
       )}

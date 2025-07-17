@@ -1,15 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
 
-:root {
-    --background-oklch: 100% 0 0;
-    --foreground-oklch: 19.93% 0.007 258.37;
-    --accent-oklch: 48.17% 0.205 261.34;
-    --success-oklch: 79.39% 0.196 155.18;
-    --error-oklch: 57.24% 0.22 29.88;
-    --muted-foreground-oklch: 73.48% 0 0;
+@font-face {
+    font-family: "ZedPlex";
+    src: url("/fonts/ZedPlexMono-Bold.ttf") format("ttf");
+    font-weight: 700;
+    font-style: normal;
 }
-
+@font-face {
+    font-family: "ZedPlex";
+    src: url("/fonts/ZedPlexMono-SemiBold.ttf") format("ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "ZedPlex";
+    src: url("/fonts/ZedPlexMono-Medium.ttf") format("ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "ZedPlex";
+    src: url("/fonts/ZedPlexMono-Regular.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "ZedPlex";
+    src: url("/fonts/ZedPlexMono-Text.ttf") format("ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "ZedPlex";
+    src: url("/fonts/ZedPlex-Light.ttf") format("ttf");
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: "ZedPlex";
+    src: url("/fonts/ZedPlex-ExtraLight.ttf") format("ttf");
+    font-weight: 100;
+    font-style: normal;
+}
 @media (prefers-color-scheme: dark) {
     :root {
         --background-oklch: 19.93% 0.007 258.37;
@@ -18,19 +51,105 @@
 }
 
 @theme inline {
-    --color-accent: oklch(var(--accent-oklch));
-    --color-success: oklch(var(--success-oklch));
-    --color-error: oklch(var(--error-oklch));
-    --color-muted-foreground: oklch(var(--muted-foreground-oklch));
+    /* DARK */
+    --color-dark-50: #f6f6f6;
+    --color-dark-100: #e7e7e7;
+    --color-dark-200: #d1d1d1;
+    --color-dark-300: #b0b0b0;
+    --color-dark-400: #888888;
+    --color-dark-500: #6d6d6d;
+    --color-dark-600: #5d5d5d;
+    --color-dark-700: #4f4f4f;
+    --color-dark-800: #454545;
+    --color-dark-900: #3d3d3d;
+    --color-dark-950: #171717;
+
+    /* SURFACE */
+    --color-surface-50: #f6f6f6;
+    --color-surface-100: #e7e7e7;
+    --color-surface-200: #d1d1d1;
+    --color-surface-300: #b0b0b0;
+    --color-surface-400: #888888;
+    --color-surface-500: #6d6d6d;
+    --color-surface-600: #5d5d5d;
+    --color-surface-700: #4f4f4f;
+    --color-surface-800: #454545;
+    --color-surface-900: #3d3d3d;
+    --color-surface-950: #1e1e1e;
+
+    /* LIGHT */
+    --color-light-50: #ffffff;
+    --color-light-100: #efefef;
+    --color-light-200: #dcdcdc;
+    --color-light-300: #bdbdbd;
+    --color-light-400: #989898;
+    --color-light-500: #7c7c7c;
+    --color-light-600: #656565;
+    --color-light-700: #525252;
+    --color-light-800: #464646;
+    --color-light-900: #3d3d3d;
+    --color-light-950: #292929;
+
+    /* ACCENT */
+    --color-accent-50: #ecf9ff;
+    --color-accent-100: #d5efff;
+    --color-accent-200: #b5e4ff;
+    --color-accent-300: #82d5ff;
+    --color-accent-400: #47bbff;
+    --color-accent-500: #1d9aff;
+    --color-accent-600: #0579ff;
+    --color-accent-700: #0061f6;
+    --color-accent-800: #0751cf;
+    --color-accent-900: #0d459b;
+    --color-accent-950: #0d2b5e;
+
+    /* EMERALD */
+    --color-emerald-50: #edfff7;
+    --color-emerald-100: #d5ffee;
+    --color-emerald-200: #aeffdd;
+    --color-emerald-300: #70ffc5;
+    --color-emerald-400: #2bfda5;
+    --color-emerald-500: #00df82;
+    --color-emerald-600: #00c06b;
+    --color-emerald-700: #009657;
+    --color-emerald-800: #067548;
+    --color-emerald-900: #07603d;
+    --color-emerald-950: #003721;
+
+    /* THUNDERBIRD */
+    --color-thunderbird-50: #fff2f1;
+    --color-thunderbird-100: #ffe1df;
+    --color-thunderbird-200: #ffc9c5;
+    --color-thunderbird-300: #ffa49d;
+    --color-thunderbird-400: #ff6f64;
+    --color-thunderbird-500: #ff4334;
+    --color-thunderbird-600: #dc2011;
+    --color-thunderbird-700: #c81b0d;
+    --color-thunderbird-800: #a51a0f;
+    --color-thunderbird-900: #881d14;
+    --color-thunderbird-950: #4a0a05;
+
+    /* MUTED */
+    --color-muted-50: #f7f7f7;
+    --color-muted-100: #ededed;
+    --color-muted-200: #dfdfdf;
+    --color-muted-300: #c8c8c8;
+    --color-muted-400: #a9a9a9;
+    --color-muted-500: #999999;
+    --color-muted-600: #888888;
+    --color-muted-700: #7b7b7b;
+    --color-muted-800: #676767;
+    --color-muted-900: #545454;
+    --color-muted-950: #363636;
 }
 
 @theme {
-    --font-body: "Bricolage Grotesque", sans-serif;
+    --font-body: "ZedPlex", sans-serif;
     --font-code: "Space Mono", monospace;
 }
 
 body {
-    background: oklch(var(--background-oklch));
-    color: oklch(var(--foreground-oklch));
+    background: var(--color-dark-950);
+    color: var(--color-light-50);
     font-family: var(--font-body);
 }
