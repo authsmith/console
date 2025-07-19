@@ -9,12 +9,12 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-background text-foreground shadow hover:bg-background/90",
+        default: "bg-light-50 text-dark-950 hover:bg-light-50/90",
         accent: "bg-accent-800 text-light-50 shadow hover:bg-accent-800/90",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+          "border border-muted-800 bg-background shadow-sm hover:bg-white hover:text-dark-950",
         secondary:
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",

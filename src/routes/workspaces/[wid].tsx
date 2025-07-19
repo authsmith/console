@@ -11,7 +11,15 @@ export default function Layout(props: RouteSectionProps) {
         width: "100%",
       }}
     >
-      <div>dsdasda</div>
+      <AppHeader />
+      <div class="grid grid-cols-10 w-full h-full">
+        <div class="col-span-2">
+          <AppSidebar />
+        </div>
+        <div class="col-span-8 p-10 font-code overflow-y-auto">
+          {props.children}
+        </div>
+      </div>
     </main>
   );
 }

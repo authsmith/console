@@ -152,4 +152,32 @@ body {
     background: var(--color-dark-950);
     color: var(--color-light-50);
     font-family: var(--font-body);
+    font-size: inherit;
+}
+
+/* ANIMATIONS */
+@keyframes slideDown {
+    from {
+        height: 0;
+    }
+    to {
+        height: var(--height);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        height: var(--height);
+    }
+    to {
+        height: 0;
+    }
+}
+
+[data-scope="collapsible"][data-part="content"][data-state="open"] {
+    animation: slideDown 250ms;
+}
+
+[data-scope="collapsible"][data-part="content"][data-state="closed"] {
+    animation: slideUp 200ms;
 }
